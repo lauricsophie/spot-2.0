@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output (rebuilt in Docker)
+dist/
+
+# Git
+.git/
+.gitignore
+
+# Environment files (injected at runtime)
+.env
+.env.*
+!.env.example
+
+# Development files
+jest.config.js
+*.md
+CLAUDE.md
+
+# IDE and editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude/Mastra development artifacts
+.claude/
+.mastra/
+
+# Test files
+coverage/
+*.test.ts
+__tests__/
+
+# OS files
+.DS_Store
+Thumbs.db

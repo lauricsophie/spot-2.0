@@ -1,0 +1,46 @@
+{
+  "name": "cerc-spot",
+  "version": "2.0.4",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx mastra dev",
+    "start": "node dist/index.js",
+    "start-dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "dependencies": {
+    "@ai-sdk/mistral": "^3.0.12",
+    "@ai-sdk/openai": "^3.0.53",
+    "@ai-sdk/openai-compatible": "^2.0.37",
+    "@hono/node-server": "1.19.10",
+    "@hono/zod-validator": "^0.4",
+    "@mastra/core": "latest",
+    "ai": "^6.0.86",
+    "hono": "4.12.7",
+    "pg": "^8.18.0",
+    "pino": "^9",
+    "ssh2": "^1.16.0",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/jest": "^29",
+    "@types/node": "^22",
+    "@types/pg": "^8.16.0",
+    "@types/ssh2": "^1.15.5",
+    "dotenv": "^17.3.1",
+    "jest": "^29",
+    "mastra": "latest",
+    "pino-pretty": "^13",
+    "ts-jest": "^29",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@4.13.0+sha512.5c20ba010c99815433e5c8453112165e673f1c7948d8d2b267f4b5e52097538658388ebc9f9580656d9b75c5cc996f990f611f99304a2197d4c56d21eea370e7"
+}

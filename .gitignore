@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+/.claude/
+/.idea/
+/CLAUDE.md
+/.mastra/
+/tmpclaude-df7e-cwd
+/.run/
+/.yarn/install-state.gz
+/src/__tests__/
+/.run/
+/.yarn/
+/memory/

@@ -1,0 +1,26 @@
+services:
+  cerc-spot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cerc-spot-api
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - API_TOKEN=${API_TOKEN}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+      - DATABASE_URL=postgresql://cerc:${POSTGRES_PASSWORD:-cerc_password}@postgres:5432/cerc_spot
+      - DECP_ENDPOINT=${DECP_ENDPOINT}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
